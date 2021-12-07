@@ -1,7 +1,7 @@
-import React from "react";;
-import "land.css"
-
-
+import React from "react";
+import "./land.css";
+import back from "./assets/test.jpg"
+import { Link } from "react-router-dom";
 export default class Land extends React.Component{
     constructor(props){
         super(props);
@@ -10,6 +10,16 @@ export default class Land extends React.Component{
         }
     }
     render(){
-        return(<div></div>)
+        return(
+        <div class="back">
+            <img
+          class="card-img-top w-100 d-block"
+          src={back}
+          class="backimage"
+        />
+        <Link to="/test">
+        <button>Click me</button>
+        </Link>
+        </div>)
     }
 }
