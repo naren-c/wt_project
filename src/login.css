@@ -5,3 +5,23 @@
     flex-direction: column;
     grid-gap : 20px;
 }
+.container{
+    position: absolute;
+    right: 10;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: rgb(185, 24, 24);
+}
+.bg-img{
+    background-image: ".\test.jpg";
+
+  /* Control the height of the image */
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}

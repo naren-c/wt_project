@@ -3,25 +3,26 @@ import "./login.css";
 import back from "./assets/test.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import "./login.css";
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
       password: "",
-    };
+    }; 
     this.usernameref = React.createRef();
     this.passwordref = React.createRef();
   }
 
   render() {
     return (
-      <div class="back">
-        <form>
-          <div class="flexcenter">
-            <div>
-              Username :
+      <div class="bg-img">
+        <form class="container">
+          <h1>Login</h1>
+          {/* <div class="flexcenter"> */}
+            {/* <div> */}
+              Username:
               <input
                 type="text"
                 placeholder="Username"
@@ -31,10 +32,9 @@ export default class Login extends React.Component {
                   console.log(this.state.username);
                 }}
               />
-            </div>
-            <br />
-            <div>
-              Password :
+            {/* </div> */}
+            {/* <div> */}
+              Password:
               <input
                 type="password"
                 placeholder="Password"
@@ -44,9 +44,9 @@ export default class Login extends React.Component {
                   console.log(this.state.password);
                 }}
               />
-            </div>
-          </div>
-        </form>
+            {/* </div> */}
+          {/* </div> */}
+          
         <button
           onClick={() => {
             axios
@@ -68,9 +68,11 @@ export default class Login extends React.Component {
               });
           }}
         >
-          Login
+        Login
         </button>
-        <a href="/register">Dont have an account? register</a>
+        <a href="/register">  Dont have an account? Register Now</a>
+        </form>
+        
       </div>
     );
   }
