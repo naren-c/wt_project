@@ -4,13 +4,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Land from "./land";
 import Test from "./test";
 import Login from "./login";
+import Register from "./register";
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Land />} />
-          <Route path="/test" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
     </div>
