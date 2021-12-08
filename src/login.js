@@ -37,7 +37,7 @@ export default class Login extends React.Component {
                 placeholder="Password"
                 ref={this.passwordref}
                 onChange={() => {
-                  this.setState({ username: this.passwordref.current.value });
+                  this.setState({ password: this.passwordref.current.value });
                   console.log(this.state.password);
                 }}
               />
