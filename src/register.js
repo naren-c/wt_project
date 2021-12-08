@@ -21,10 +21,10 @@ export default class Register extends React.Component {
 
   render() {
     return (
-      <div class="back">
-        <h1>Register</h1>
-        <form>
-          <div class="flexcenter">
+      <div class="backimage">
+        <div>
+          <div class="container">
+            <p class="head">Register</p>
             <div>
               Username :
               <input
@@ -37,7 +37,6 @@ export default class Register extends React.Component {
                 }}
               />
             </div>
-            <br />
             <div>
               Password :
               <input
@@ -72,33 +71,59 @@ export default class Register extends React.Component {
                 }}
               />
             </div>
+            <Link to="/login">
+              <button
+                onClick={() => {
+                  if (this.state.username === "") {
+                    alert("Please enter username");
+                  } else if (this.state.password === "") {
+                    alert("Please enter password");
+                  } else if (this.state.email === "") {
+                    alert("Please enter email");
+                  } else if (this.state.phone === "") {
+                    alert("Please enter phone no");
+                  } else {
+                    axios
+                      .post("http://localhost:5000/register", {
+                        username: this.state.username,
+                        password: this.state.password,
+                        email: this.state.email,
+                        phone: this.state.phone,
+                      })
+                      .then((res) => {
+                        console.log(res);
+                        console.log(res.data);
+                        alert("Registered successfully");
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                        alert("Error in registering");
+                      });
+                  }
+                  axios
+                    .post("http://localhost:5000/register", {
+                      username: this.state.username,
+                      password: this.state.password,
+                      email: this.state.email,
+                      phno: this.state.phone,
+                    })
+                    .then((res) => {
+                      console.log(res);
+                      console.log(res.data);
+                      if (res.data.inserted === false)
+                        alert("Username already exists");
+                      else alert("Register Successful");
+                    })
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                }}
+              >
+                Register
+              </button>
+            </Link>
           </div>
-        </form>
-        <Link to="/login">
-          <button
-            onClick={() => {
-              axios
-                .post("http://localhost:5000/register", {
-                  username: this.state.username,
-                  password: this.state.password,
-                  email: this.state.email,
-                  phno: this.state.phone,
-                })
-                .then((res) => {
-                  console.log(res);
-                  console.log(res.data);
-                  if (res.data.inserted === false)
-                    alert("Username already exists");
-                  else alert("Register Successful");
-                })
-                .catch((err) => {
-                  console.log(err);
-                });
-            }}
-          >
-            Register
-          </button>
-        </Link>
+        </div>
       </div>
     );
   }

@@ -5,6 +5,8 @@ import Land from "./land";
 import Test from "./test";
 import Login from "./login";
 import Register from "./register";
+import Home from "./home";
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +15,7 @@ function App() {
           <Route path="/" element={<Land />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
     </div>

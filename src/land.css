@@ -1,4 +1,29 @@
 .backimage{
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    background-image: url("./assets/test.jpg");
     width : 100%;
-    height : 100%;
+    min-height : 100vh;
+    background-repeat: no-repeat, no-repeat  ;
+}
+
+
+
+.head{
+    font-size : 35px;
+}
+
+.getstarted{
+    padding : 15px;
+    opacity : 1;
+    border-radius : 20px;
+    border : 2px solid black;
+}
+
+.card1{
+    padding : 50px;
+    background-color : white;
+    opacity : 0.85;
+    border-radius : 22px;
 }

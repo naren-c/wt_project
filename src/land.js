@@ -11,13 +11,14 @@ export default class Land extends React.Component {
   }
   render() {
     return (
-      <div class="back">
-        <img class="card-img-top w-100 d-block" src={back} class="backimage" />
-        <Link to="/login">
-          <button>Click me</button>
-        </Link>
+      <div class="backimage">
+        <div class="card1">
+          <p class="head">Fitness App</p>
+          <Link to="/login">
+            <button class="getstarted">Let's Get started!</button>
+          </Link>
+        </div>
       </div>
     );
   }
 }
-
