@@ -65,7 +65,9 @@ export default class Login extends React.Component {
                     );
                   } else {
                     alert("Login Successful");
-                    window.location("/home");
+                    //return <Redirect to ="/home"></Redirect>
+                    <Link to="/home"></Link>
+                    // window.location("/home");</div>
                   }
                 })
                 .catch((err) => {

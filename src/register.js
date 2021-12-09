@@ -84,23 +84,6 @@ export default class Register extends React.Component {
                     alert("Please enter phone no");
                   } else {
                     axios
-                      .post("http://localhost:5000/register", {
-                        username: this.state.username,
-                        password: this.state.password,
-                        email: this.state.email,
-                        phone: this.state.phone,
-                      })
-                      .then((res) => {
-                        console.log(res);
-                        console.log(res.data);
-                        alert("Registered successfully");
-                      })
-                      .catch((err) => {
-                        console.log(err);
-                        alert("Error in registering");
-                      });
-                  }
-                  axios
                     .post("http://localhost:5000/register", {
                       username: this.state.username,
                       password: this.state.password,
@@ -117,6 +100,7 @@ export default class Register extends React.Component {
                     .catch((err) => {
                       console.log(err);
                     });
+                  }
                 }}
               >
                 Register
